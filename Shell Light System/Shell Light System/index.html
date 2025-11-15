@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>LED Control Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+      :root {
+        --shadow: 0 3px 4px rgba(0, 0, 0, 1), inset 0 -2px 5px rgba(0, 0, 0, 1),
+          inset 0 2px 2px rgba(255, 255, 255, 0.5), 0 0 0 2px #000, 0 0 0 5px #0c0c0c,
+          0 0 0 5.5px #080808;
+        --shadow-color: yellow;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #111;
+      }
+      
+      .card {
+        height: 550px;
+        width: 280px;
+        padding: 50px;
+        background: #1b1b1b;
+        border-radius: 8px;
+        justify-content: center;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .row h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #818080;
+        text-shadow: 0 0 60px #ffffff27, 0 0 80px #ffffff1d;
+      }
+      
+      .input {
+        display: none;
+      }
+      
+      .btn {
+        width: 80px;
+        height: 80px;
+        background: #222;
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        font-size: 30px;
+        color: #636363;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .input:checked ~ .btn {
+        color: yellow;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 1), inset 0 -2px 5px rgba(0, 0, 0, 1),
+          inset 0 5px 5px rgba(255, 255, 255, 0.1), 0 0 0 2px #000, 0 0 0 5px #0c0c0c,
+          0 0 0 7px yellow;
+        text-shadow: 0 0 15px yellow, 0 0 30px yellow;
+        animation: mymove 0.25s ease;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="card">
+      <div class="row">
+        <h1>LED Control Panel</h1>
+      </div>
+      <div class="row">
+        <label>
+          <input type="checkbox" class="input" id="chk_1" onchange="toggleSystem(1)"/>
+          <div class="btn" style="--shadow-color: #ddd6f3">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_2" onchange="toggleSystem(2)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_3" onchange="toggleSystem(3)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          <input type="checkbox" class="input" id="chk_4" onchange="toggleSystem(4)"/>
+          <div class="btn" style="--shadow-color: #ddd6f3">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_5" onchange="toggleSystem(5)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_6" onchange="toggleSystem(6)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          <input type="checkbox" class="input" id="chk_7" onchange="toggleSystem(7)"/>
+          <div class="btn" style="--shadow-color: #ddd6f3">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_8" onchange="toggleSystem(8)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_9" onchange="toggleSystem(9)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          <input type="checkbox" class="input" id="chk_10" onchange="toggleSystem(10)"/>
+          <div class="btn" style="--shadow-color: #ddd6f3">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_11" onchange="toggleSystem(11)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" class="input" id="chk_12" onchange="toggleSystem(12)"/>
+          <div class="btn" style="--shadow-color: #ff5858">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+        </label>
+      </div>
+    </div>
+ 
+  </body>
+</html>
